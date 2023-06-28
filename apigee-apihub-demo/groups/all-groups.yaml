@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+    name: apihub-groups
+    description: API Hub groups for Backstage.io
+spec:
+    targets:
+        - ./group_apigee-apihub-demo_apg-example.yaml
+        - ./group_apigee-apihub-demo_apg-owner.yaml

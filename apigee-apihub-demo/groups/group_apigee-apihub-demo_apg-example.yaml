@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+    name: apg-example
+    namespace: apigee-apihub-demo
+    title: Example Team Name
+    description: Example description
+    tags:
+        - apihub
+    links:
+        - url: https://pantheon.corp.google.com/apigee/hub/settings/taxonomies?project=apigee-apihub-demo
+          title: API Hub Taxonomies
+spec:
+    type: team
+    children: []

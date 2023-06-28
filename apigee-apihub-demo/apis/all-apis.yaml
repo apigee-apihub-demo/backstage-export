@@ -1,0 +1,35 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+    name: apihub-apis
+    description: API Hub apis for Backstage.io
+spec:
+    targets:
+        - ./api_apigee-apihub-demo_apg-bookstore.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-aardvarks.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-bandicoots.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-crocodiles.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-dolphins.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-elephants.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-flamingos.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-giraffes.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-hedgehogs.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-iguanas.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-jaguars.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-kangaroos.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-lemurs.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-monkeys.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-nightingales.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-ostriches.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-porcupines.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-quokkas.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-raccoons.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-salamanders.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-tortoises.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-uakaris.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-vultures.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-whales.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-xeruses.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-yaks.yaml
+        - ./api_apigee-apihub-demo_apg-fauna-zebras.yaml
+        - ./api_apigee-apihub-demo_apg-petstore.yaml

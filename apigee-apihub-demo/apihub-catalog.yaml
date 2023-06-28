@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+    name: apihub-apigee-apihub-demo
+    description: API Hub project apigee-apihub-demo export for Backstage.io
+spec:
+    targets:
+        - ./groups/all-groups.yaml
+        - ./apis/all-apis.yaml
+        - ./components/all-components.yaml

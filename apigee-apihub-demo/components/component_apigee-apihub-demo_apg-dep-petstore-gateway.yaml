@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+    name: apg-dep-petstore-gateway
+    namespace: apigee-apihub-demo
+    title: Apigee Deployment API Gateway
+    description: Apigee Deployment API Gateway of API petstore
+    labels:
+        apihub-gateway: apihub-google-cloud-api-gateway
+        platform: apigateway
+    tags:
+        - apihub
+    links:
+        - url: https://pantheon.corp.google.com/apigee/hub/apis/petstore/overview?project=apigee-apihub-demo
+          title: API Hub
+spec:
+    type: Service
+    lifecycle: unknown
+    owner: Group:apigee-apihub-demo/apg-owner
+    providesApis:
+        - API:apigee-apihub-demo/apg-petstore
