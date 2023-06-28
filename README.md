@@ -20,7 +20,7 @@ registry-connect publish backstage apigee-apihub-demo --owner-name "API Hub Demo
 ## Viewing the data
 
 Follow the instructions in the
-[backstage-example](https://github.com/apigee-apihub-demo/registry-experimental) repo
+[backstage-example](https://github.com/apigee-apihub-demo/backstage-example) repo
 to start and access the example Backstage app.
 
 ## Disclaimer
