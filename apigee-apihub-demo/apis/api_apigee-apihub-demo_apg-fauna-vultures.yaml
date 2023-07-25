@@ -1,0 +1,136 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+    name: apg-fauna-vultures
+    namespace: apigee-apihub-demo
+    title: Apigee Fauna Vultures API
+    description: The Fauna Vultures API allows users to manage a collection of vultures.
+    labels:
+        apihub-business-unit: fauna
+        apihub-lifecycle: production
+        apihub-style: apihub-openapi
+        apihub-target-users: public
+        apihub-team: fauna-birds
+        categories: birds
+        provider: fauna
+        source: generate-animal-apis
+        updated: "2023-06-07"
+    tags:
+        - apihub
+    links:
+        - url: https://pantheon.corp.google.com/apigee/hub/apis/fauna-vultures/overview?project=apigee-apihub-demo
+          title: API Hub
+spec:
+    type: openapi
+    lifecycle: production
+    owner: unknown
+    definition: |
+        openapi: 3.0.0
+        info:
+          version: 1.0.0
+          title: Fauna Vultures API
+        servers:
+          - url: https://apigee-apihub-demo.github.io
+        paths:
+          /vultures:
+            get:
+              summary: List all vultures
+              operationId: listVultures
+              tags:
+                - vultures
+              parameters:
+                - name: limit
+                  in: query
+                  description: How many vultures to return at one time (max 100)
+                  schema:
+                    type: integer
+                    format: int32
+              responses:
+                "200":
+                  description: A paged array of vultures
+                  headers:
+                    x-next:
+                      description: A link to the next page of responses
+                      schema:
+                        type: string
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/Vultures'
+                default:
+                  description: unexpected error
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/Error'
+            post:
+              summary: Create vulture
+              operationId: createVulture
+              tags:
+                - vultures
+              responses:
+                "201":
+                  description: Null response
+                default:
+                  description: unexpected error
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/Error'
+          /vultures/{vultureId}:
+            get:
+              summary: Info for a specific vulture
+              operationId: getVulture
+              tags:
+                - vultures
+              parameters:
+                - name: vultureId
+                  in: path
+                  description: The id of the vulture to retrieve
+                  required: true
+                  schema:
+                    type: string
+              responses:
+                "200":
+                  description: Expected response to a valid request
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/Vulture'
+                default:
+                  description: unexpected error
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/Error'
+        components:
+          schemas:
+            Error:
+              type: object
+              required:
+                - code
+                - message
+              properties:
+                code:
+                  type: integer
+                  format: int32
+                message:
+                  type: string
+            Vulture:
+              type: object
+              required:
+                - id
+                - name
+              properties:
+                id:
+                  type: integer
+                  format: int64
+                name:
+                  type: string
+                tag:
+                  type: string
+            Vultures:
+              type: array
+              maxItems: 100
+              items:
+                $ref: '#/components/schemas/Vulture'

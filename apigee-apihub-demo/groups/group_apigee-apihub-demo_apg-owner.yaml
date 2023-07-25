@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+    name: apg-owner
+    namespace: apigee-apihub-demo
+    title: API Hub Demo
+    description: API Hub Demo
+    tags:
+        - apihub
+spec:
+    type: team
+    children: []
